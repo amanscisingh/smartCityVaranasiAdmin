@@ -98,8 +98,7 @@ adminRoute.get('/response', async (req, res) => {
 // goute for post request to add a broadcast
 adminRoute.post('/broadcast', async (req, res) => {
     try {
-        const adminId = req.query.id;
-        console.log(adminId);
+        const adminId = req.cookies['user-id'];
         var broadcast = new Broadcasts({
             title: req.body.title,
             description: req.body.description,

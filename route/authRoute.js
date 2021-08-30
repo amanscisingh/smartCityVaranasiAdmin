@@ -22,14 +22,15 @@ router.post('/login', (req, res) => {
         let userData = await Users.findOne({ googleId: userid });
         if (userData == null) {
             let newUser = new Users({
+                googleId: userid,
                 firstName: payload['given_name'],
                 lastName: payload['family_name'],
+                displayName: payload['given_name'] + ' ' + payload['family_name'],
                 image: payload['picture'],
                 email: payload['email'],
                 designation: "Admin"
             });
             await newUser.save();
-
         }
         console.log(userData);
     }

@@ -19,28 +19,6 @@ const itemsCached = [
 
 
 
-// self.addEventListener('install', e => {
-//     e.waitUntil(
-//         caches.open("c1").then(cache => {
-//             return cache.addAll(itemsCached)
-//         })
-//         .then(self.skipWaiting())
-//     )
-
-// })
-
-
-// self.addEventListener('fetch', e => {
-//     e.respondWith(
-//         caches.match(e.request).then(response => {
-//             return response || fetch(e.request)
-//         })
-//     )
-// })
-
-
-
-
 // self.addEventListener('activate', function(event) {
 //     console.log('this event triggers when the service worker activates')
 // })

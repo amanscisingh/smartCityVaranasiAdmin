@@ -63,6 +63,7 @@
         <input id="submitBtn" disabled type="submit" value="Assign Task👍">        
     </form>
     <hr id="shadowedLine">
+    <p id="loading">Please wait While the analytics Panel is Loading...</p>
 
     <div class="canvasElement"><canvas id="myChart" width="100%" height="80%"></canvas></div>
     <br>
@@ -81,6 +82,7 @@
 
 {{!-- script starts here --}}
 <script>
+    const loading = document.getElementById('loading');
     response = ['Bhelupur', 'Dashaswamedh', 'Varunapar', 'Adampur', 'Kotwali'];
     ele=document.getElementById("zone");
     for (let i = 0; i < response.length; i++) {
@@ -344,6 +346,7 @@
                 }
             },
         });
+        loading.style.display = "none";
         },5000);
     });
       
